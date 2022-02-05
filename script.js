@@ -34,12 +34,19 @@ function createEtchASketch(rowSquares) {
             // Enable "drawing" i.e. turn grid square colour upon mouseover
             const specificCellClass = ".cell" + i;
             const specificCell = document.querySelector(specificCellClass);
+            let opacity = 0;
             specificCell.addEventListener("mouseover", () => {
+                // Colouring square in black only
                 // specificCell.style.backgroundColor = "#000000";
 
-                // Creating a random colour
-                const randomColour = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
-                specificCell.style.backgroundColor = randomColour;
+                // Colouring square in a random colour
+                // const randomColour = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
+                // specificCell.style.backgroundColor = randomColour;
+
+                // Colouring square black, in increasing opacity
+                opacity += 0.1;
+                let colour = "rgba(0, 0, 0, " + opacity + ")";
+                specificCell.style.backgroundColor = colour;
             })
         }
     }
