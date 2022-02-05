@@ -31,11 +31,15 @@ function createEtchASketch(rowSquares) {
             cell.style.cssText = "border: 1px solid #000000; height: 6px; width: 6px; background-color: #FFFFFF;";
             container.appendChild(cell);
         
-            // Turn grid squares black upon mouseover
+            // Enable "drawing" i.e. turn grid square colour upon mouseover
             const specificCellClass = ".cell" + i;
             const specificCell = document.querySelector(specificCellClass);
             specificCell.addEventListener("mouseover", () => {
-                specificCell.style.backgroundColor = "#000000";
+                // specificCell.style.backgroundColor = "#000000";
+
+                // Creating a random colour
+                const randomColour = "#" + (Math.random() * 0xFFFFFF << 0).toString(16);
+                specificCell.style.backgroundColor = randomColour;
             })
         }
     }
