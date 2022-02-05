@@ -1,1 +1,1 @@
-# etch-a-sketch
+A digital rendition of the classic Etch-A-Sketch game, where by default a 100x100 grid is provided to the user. The user can "draw" by moving their mouse around the grid. When the user clears the grid, they are prompted to enter a new number of squares in a side to create a new grid.
